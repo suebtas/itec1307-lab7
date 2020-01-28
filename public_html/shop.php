@@ -36,38 +36,39 @@
         </div>
     </nav>
 
-    <aside id="hero" class="hero">
-    Welcome to Wombat Coffee Roasters! We are
-    passionate about our craft, striving to bring you
-    the best hand-crafted coffee in the city.
-    </aside>
             
     <main id="main">
-    <div class="row">                                         
-        <section class="column">                                
-        <h2 class="subtitle">Single-origin</h2>
-        <p>We have built partnerships with small farms
-            around the world to hand-select beans at the
-            peak of season. We then carefully roast in
-            <a href="/batch-size.html">small batches</a>
-            to maximize their potential.</p>
-        </section>
-        <section class="column">                                
-        <h2 class="subtitle">Blends</h2>
-        <p>Our tasters have put together a selection of
-            carefully balanced blends. Our famous
-            <a href="/house-blend.html">house blend</a>
-            is available year round.</p>
-        </section>
-        <section class="column">                                
-        <h2 class="subtitle">Brewing Equipment</h2>
-        <p>We offer our favorite kettles, French
-            presses, and pour-over cones. Come to one of
-            our <a href="/classes.html">brewing
-            classes</a> to learn how to brew the perfect
-            pour-over cup.</p>
-        </section>
-    </div>
+    
+      <div class="wrapper">
+          <div class="checkout container">
+
+              <header>
+                  <h1>Hi, <br>Let's test a transaction</h1>
+                  <p>
+                      Make a test payment with Braintree using PayPal or a card
+                  </p>
+              </header>
+
+              <form method="post" id="payment-form" action="<?php echo $baseUrl;?>checkout.php">
+                  <section>
+                      <label for="amount">
+                          <span class="input-label">Amount</span>
+                          <div class="input-wrapper amount-wrapper">
+                              <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="10">
+                          </div>
+                      </label>
+
+                      <div class="bt-drop-in-wrapper">
+                          <div id="bt-dropin"></div>
+                      </div>
+                  </section>
+
+                  <input id="nonce" name="payment_method_nonce" type="hidden" />
+                  <button class="button" type="submit"><span>Test Transaction</span></button>
+              </form>
+          </div>
+      </div>
+
     </main>
       
     <script type="text/javascript" src="Listing4.js"></script>  
